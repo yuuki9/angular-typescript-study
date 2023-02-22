@@ -1,0 +1,7 @@
+export enum KepcoEnumCameraIndex {
+	KEPCO_ENUM_CAMERA_INDEX_FRONT = 0, // 전방 주행용 카메라
+	KEPCO_ENUM_CAMERA_INDEX_REAR = 1, // 후방 주행용 카메라
+	KEPCO_ENUM_CAMERA_INDEX_360 = 2, // 360도 카메라
+	KEPCO_ENUM_CAMERA_INDEX_DRIVING_SEGMENT = 100, // 주행 영상을 영상분할한 결과 영상, DEBUG 용도
+	KEPCO_ENUM_CAMERA_INDEX_ENUM_END = 101, // 
+}

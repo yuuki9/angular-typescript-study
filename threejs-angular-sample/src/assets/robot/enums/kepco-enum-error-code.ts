@@ -1,0 +1,34 @@
+export enum KepcoEnumErrorCode {
+	KEPCO_ENUM_ERROR_CODE_UNKNOWN = 0, // 알수없는 에러
+	KEPCO_ENUM_ERROR_CODE_MISSION_UPLOAD_FAIL = 1, // 미션 업로드 실패
+	KEPCO_ENUM_ERROR_CODE_MISSION_UPLOAD_FAIL_NOT_ENOUGH_WAYPOINT = 2, // 미션 업로드 실패, WAYPOINT의 개수가 충분하지 않음
+	KEPCO_ENUM_ERROR_CODE_MISSION_UPLOAD_FAIL_INVALID_MISSION = 3, // 미션 업로드 실패, 미션이 유효하지 않음(WAYPOINT가 지점이 중복되거나, 갈수 없는 영역에 WAYPOINT가 지정되어 있거나...)
+	KEPCO_ENUM_ERROR_CODE_MISSION_UPLOAD_FAIL_NON_POSITIVE_SPEED = 4, // 미션 업로드 실패. 초기 미션 속도는 0보다 커야함
+	KEPCO_ENUM_ERROR_CODE_MISSION_UPLOAD_FAIL_INVALID_LAST_WAYPOINT_ACTION = 5, // 미션 업로드 실패. 마지막 WAYPOINT ACTION이 유효하지 않음(AUTO MODE의 경우 마지막은 DOCK, EVENT MODE의 경우 마지막은 NONE), TODO: EVENT MODE의 마지막 ACTION은 검토 중으로 변경될 수 있음
+	KEPCO_ENUM_ERROR_CODE_MISSION_UPLOAD_FAIL_MISSION_ONGOING = 6, // 미션 업로드 실패. 현재 미션진행중으로 미션 업로드 불가. 미션 중지 후 다시시도
+	KEPCO_ENUM_ERROR_CODE_MISSION_CMD_FAIL = 7, // 미션 명령 실패
+	KEPCO_ENUM_ERROR_CODE_MISSION_CMD_FAIL_UNSUPPORTED = 8, // 미션 명령 실패, 지원하지 않는 미션명령 입니다
+	KEPCO_ENUM_ERROR_CODE_MISSION_CMD_FAIL_NO_MISSION = 9, // 미션 명령 실패, 현재 미션이 업로드되어 있지 않습니다.
+	KEPCO_ENUM_ERROR_CODE_MISSION_START_FAIL = 10, // 미션 시작 실패
+	KEPCO_ENUM_ERROR_CODE_MISSION_START_FAIL_LOW_BATTERY = 11, // 미션 시작 실패. 배터리가 낮아 미션을 시작할 수 없음
+	KEPCO_ENUM_ERROR_CODE_MISSION_START_FAIL_DATA_TRANSFER = 12, // 미션 시작 실패. 데이터 전송중이므로 미션를 시작할 수 없음. TODO: 적용여부 검토중
+	KEPCO_ENUM_ERROR_CODE_MISSION_START_FAIL_ROBOT_MODE = 13, // 미션 시작 실패. 미션을 시작할 수 있는 로봇모드가 아님. 잠시 후 다시 시도
+	KEPCO_ENUM_ERROR_CODE_MISSION_START_FAIL_NOT_MISSION_STOP_STATE = 14, // 미션 시작 실패. 미션이 중지상태가 아님(start 두번 클릭, pause, resumte 상태에서 클릭 등을 방지)
+	KEPCO_ENUM_ERROR_CODE_MISSION_PAUSE_FAIL = 15, // 미션 일시중지 실패
+	KEPCO_ENUM_ERROR_CODE_MISSION_PAUSE_FAIL_NOT_MISSION_START_STATE = 16, // 미션 일시중지 실패, 현재 미션 시작 상태가 아님(start 버튼을 누른 이후, 미션 진행중에만 적용되게 하기위함)
+	KEPCO_ENUM_ERROR_CODE_MISSION_RESUME_FAIL = 17, // 미션 재개 실패
+	KEPCO_ENUM_ERROR_CODE_MISSION_RESUME_FAIL_NOT_MISSION_PAUSE_STATE = 18, // 미션 재개 실패, 현재 미션 일시정지 상태가 아님
+	KEPCO_ENUM_ERROR_CODE_MISSION_STOP_FAIL = 19, // 미션 정지 실패
+	KEPCO_ENUM_ERROR_CODE_MISSION_STOP_FAIL_ALREADY_MISSION_STOP_STATE = 20, // 미션 정지 실패, 이미 미션 중지 상태임
+	KEPCO_ENUM_ERROR_CODE_SET_SPEED_FAIL = 21, // 속도 조정 실패
+	KEPCO_ENUM_ERROR_CODE_SET_SPEED_FAIL_NO_AUTO_MODE = 22, // 속도 조정 실패, AUTO_MODE(자율주행) 상태에서만 속도변경 가능
+	KEPCO_ENUM_ERROR_CODE_SET_SPEED_FAIL_ZERO_SPEED = 23, // 속도 조정 실패, 속도 0은 설정할 수 없음. 미션 일시정지 기능을 활용
+	KEPCO_ENUM_ERROR_MANUAL_CONTROL_FAIL = 24, // 수동조작 실패
+	KEPCO_ENUM_ERROR_MANUAL_CONTROL_FAIL_UNSUPPORTED_MODE = 25, // 수동조작 실패. 수동조작 모드에서만 수동조작 가능(현재 수동조작 모드가 아님)
+	KEPCO_ENUM_ERROR_MANUAL_MODE_FAIL = 26, // 수동조작 모드 적용/해제 실패
+	KEPCO_ENUM_ERROR_MANUAL_MODE_FAIL_UNSUPPORTED_MODE = 27, // 수동조작 모드 적용/해제 실패, 현재모드에서는 수동조작 모드를 적용/해제할 수 없습니다
+	KEPCO_ENUM_ERROR_REQUEST_VIDEO_FAIL = 28, // 비디오 스트리밍 요청 실패
+	KEPCO_ENUM_ERROR_STOP_VIDEO_FAIL = 29, // 비디오 스트리밍 중단 실패
+	KEPCO_ENUM_ERROR_CMD_FAIL_UNALLOWED_STATE = 30, // 명령 실패, 현재 로봇상태가 명령을 받아들일 수 없는 상태임(로봇이 제자리 회전, RECOVERY MODE 등이며, 이상태에서 명령이 들어가면 오류를 일으킬수 있기 때문). 잠시 후 다시시도
+	KEPCO_ENUM_ERROR_CODE_ENUM_END = 31, // 
+}

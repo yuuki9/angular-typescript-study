@@ -1,0 +1,7 @@
+export enum KepcoEnumMissionCmd {
+	KEPCO_ENUM_MISSION_CMD_START = 0, // 미션 시작
+	KEPCO_ENUM_MISSION_CMD_PAUSE = 1, // 미션 일시중지
+	KEPCO_ENUM_MISSION_CMD_STOP = 2, // 미션 중단
+	KEPCO_ENUM_MISSION_CMD_RESUME = 3, // 미션 재개
+	KEPCO_ENUM_MISSION_CMD_ENUM_END = 4, // 
+}
