@@ -1,9 +1,0 @@
-<div #mapcanvas style=" width:100%; height:800px;" ></div>
-<button style="margin-right: 3px;" pButton type="button" label="랜덤이동" (click)="RandomMove()" ></button>
-<button style="margin-right: 3px;" pButton type="button" label="ResetZoom" (click)="ResetZoom()" ></button>
-<button style="margin-right: 3px;" pButton type="button" label="Zoom +" (click)="ZoomPlus()" ></button>
-<button style="margin-right: 3px;" pButton type="button" label="Zoom -" (click)="ZoomMinus()" ></button>
-<!-- <p-toggleButton onLabel="LockRotate" offLabel="unLockRotate" [(ngModel)]="lockRotateChecked" (onChange)='LockRotate()'></p-toggleButton> -->
-<p-toggleButton onLabel="LockModeOn" offLabel="LockModeOFF" [formControl]='LockMode'></p-toggleButton>
-<p-toggleButton onLabel="FPSModeOn" offLabel="FPSModeOFF" [formControl]='FPSMode'></p-toggleButton>
-<p-toggleButton onLabel="TPSModeOn" offLabel="TPSModeOFF" [formControl]='TPSMode'></p-toggleButton>
