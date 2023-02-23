@@ -1,0 +1,3 @@
+<p-listbox (onClick)="click($event)" [options]="Layers" [(ngModel)]="SelectObjects" [metaKeySelection]="false" [checkbox]="true" [filter]="true" [multiple]="true" optionLabel="name" [listStyle]="{'max-height':'250px'}" [style]="{'position':'fixed' ,'width':'15rem', 'z-index':1}">
+</p-listbox>
+<div #mapcanvas style=" width:100%; height:800px;" ></div>
